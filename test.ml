@@ -21,15 +21,17 @@ let _ =
       Ints.empty
       [1;2;3;4;5;6;7;8;9;10] in
 
-  let k = Ints.elements t in
-    List.iter (fun (i,p) ->
-                 print_int i;
-                 print_string " ";
-                 print_int p;
-                 print_newline ()) k;
-
-    let _ =
-      List.fold_left (fun t elt ->
+    Printf.printf "height %d\n" (Ints.height t);
+    
+    let k = Ints.elements t in
+      List.iter (fun (i,p) ->
+                   print_int i;
+                   print_string " ";
+                   print_int p;
+                   print_newline ()) k;
+      
+      let _ =
+        List.fold_left (fun t elt ->
                         (try
                            let e, p = Ints.get_root t in
                              Printf.printf "Root %d %d\n" e p

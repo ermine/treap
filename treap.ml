@@ -13,7 +13,7 @@ end
 
 exception Empty
 
-module Set(Ord: OrderedType) =
+module Set (Ord: OrderedType) =
 struct
   type elt = Ord.t
   type t =
@@ -133,11 +133,16 @@ struct
       | Leaf ->
           raise Not_found
 
+  let rec fold f acc = function
+    |Leaf -> acc
+    | Node (_s, elt, _priority, left, right) ->
+        fold f (f (fold f acc left) elt) right
+       
   let keys t =
     let rec aux_keys = function
       | Leaf -> []
       | Node (_s, elt, _priority, left, right) ->
-          aux_keys left @ [elt] @ aux_keys right
+          aux_keys left @ elt :: aux_keys right
     in
       aux_keys t
 
@@ -145,7 +150,7 @@ struct
     let rec aux_elements = function
       | Leaf -> []
       | Node (_s, elt, priority, left, right) ->
-          aux_elements left @ [(elt, priority)] @ aux_elements right
+          aux_elements left @ (elt, priority) :: aux_elements right
     in
       aux_elements t
 
@@ -156,7 +161,7 @@ struct
 
 end
   
-module Map(Ord: OrderedType) =
+module Map  (Ord: OrderedType) =
 struct
   type key = Ord.t
   type 'a t =
@@ -277,11 +282,16 @@ struct
       | Leaf ->
           raise Not_found
 
+  let rec fold f acc = function
+    |Leaf -> acc
+    | Node (_s, elt, value, _priority, left, right) ->
+        fold f (f (fold f acc left) elt value) right
+
   let keys t =
     let rec aux_keys = function
       | Leaf -> []
       | Node (_s, elt, _value, _priority, left, right) ->
-          aux_keys left @ [elt] @ aux_keys right
+          aux_keys left @ elt :: aux_keys right
     in
       aux_keys t
 
@@ -289,7 +299,7 @@ struct
     let rec aux_elements = function
       | Leaf -> []
       | Node (_s, elt, value, priority, left, right) ->
-          aux_elements left @ [(elt, value, priority)] @ aux_elements right
+          aux_elements left @ (elt, value, priority) :: aux_elements right
     in
       aux_elements t
 
