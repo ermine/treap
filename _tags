@@ -1,1 +1,9 @@
+# OASIS_START
+# DO NOT EDIT (digest: 293e60f6a10a08a5a4344d1c68ef2c51)
+# Library treap
+# Executable test
+<test.{native,byte}>: use_treap
+<*.ml{,i}>: use_treap
+<test.{native,byte}>: custom
+# OASIS_STOP
 <*.ml>: warn_A
