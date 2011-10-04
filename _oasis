@@ -1,5 +1,5 @@
 OASISFormat: 0.2
-Name:        treap
+Name:        erm_treap
 Version:     0.1
 Authors:     Anastasia Gornostaeva
 Copyrights:  (C) 2009 Anastasia Gornostaeva
@@ -13,7 +13,7 @@ Description:
   Treap is a binary search tree data structure. This library provides
   Set and Map functors implemented on top of treap.
 
-Library treap
+Library erm_treap
   Path:       .
   Modules:    Treap
 
@@ -23,7 +23,7 @@ Executable test
   Custom: true
   CompiledObject: best
   MainIs: test.ml
-  BuildDepends: treap
+  BuildDepends: erm_treap
 
 Test main
   Command: $test
@@ -35,7 +35,7 @@ Document api
   Type: ocamlbuild (0.2)
   BuildTools: ocamldoc
   XOcamlbuildPath: .
-  XOcamlbuildLibraries: treap
+  XOcamlbuildLibraries: erm_treap
 
 SourceRepository github
   Type:     git

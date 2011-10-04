@@ -1,7 +1,7 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: df4e4a9c63a612b662cd1766127b360f) *)
+(* DO NOT EDIT (digest: 3022d0a3327b0888b5dbad9a05a78463) *)
 module OASISGettext = struct
-# 21 "/home/ygrek/work/arena/2010/oasis-0.2.0/src/oasis/OASISGettext.ml"
+# 21 "/usr/home/ermine/projects/ocaml/src/oasis/src/oasis/OASISGettext.ml"
   
   let ns_ str = 
     str
@@ -24,7 +24,7 @@ module OASISGettext = struct
 end
 
 module OASISExpr = struct
-# 21 "/home/ygrek/work/arena/2010/oasis-0.2.0/src/oasis/OASISExpr.ml"
+# 21 "/usr/home/ermine/projects/ocaml/src/oasis/src/oasis/OASISExpr.ml"
   
   
   
@@ -115,7 +115,7 @@ end
 
 
 module BaseEnvLight = struct
-# 21 "/home/ygrek/work/arena/2010/oasis-0.2.0/src/base/BaseEnvLight.ml"
+# 21 "/usr/home/ermine/projects/ocaml/src/oasis/src/base/BaseEnvLight.ml"
   
   module MapString = Map.Make(String)
   
@@ -212,7 +212,7 @@ end
 
 
 module MyOCamlbuildFindlib = struct
-# 21 "/home/ygrek/work/arena/2010/oasis-0.2.0/src/plugins/ocamlbuild/MyOCamlbuildFindlib.ml"
+# 21 "/usr/home/ermine/projects/ocaml/src/oasis/src/plugins/ocamlbuild/MyOCamlbuildFindlib.ml"
   
   (** OCamlbuild extension, copied from 
     * http://brion.inria.fr/gallium/index.php/Using_ocamlfind_with_ocamlbuild
@@ -320,7 +320,7 @@ module MyOCamlbuildFindlib = struct
 end
 
 module MyOCamlbuildBase = struct
-# 21 "/home/ygrek/work/arena/2010/oasis-0.2.0/src/plugins/ocamlbuild/MyOCamlbuildBase.ml"
+# 21 "/usr/home/ermine/projects/ocaml/src/oasis/src/plugins/ocamlbuild/MyOCamlbuildBase.ml"
   
   (** Base functions for writing myocamlbuild.ml
       @author Sylvain Le Gall
@@ -335,7 +335,7 @@ module MyOCamlbuildBase = struct
   type name = string 
   type tag = string 
   
-# 55 "/home/ygrek/work/arena/2010/oasis-0.2.0/src/plugins/ocamlbuild/MyOCamlbuildBase.ml"
+# 55 "/usr/home/ermine/projects/ocaml/src/oasis/src/plugins/ocamlbuild/MyOCamlbuildBase.ml"
   
   type t =
       {
@@ -450,7 +450,8 @@ end
 
 open Ocamlbuild_plugin;;
 let package_default =
-  {MyOCamlbuildBase.lib_ocaml = [("treap", [])]; lib_c = []; flags = []; }
+  {MyOCamlbuildBase.lib_ocaml = [("erm_treap", [])]; lib_c = []; flags = []; 
+  }
   ;;
 
 let dispatch_default = MyOCamlbuildBase.dispatch_default package_default;;
