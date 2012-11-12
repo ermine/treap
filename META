@@ -1,9 +1,11 @@
 # OASIS_START
-# DO NOT EDIT (digest: 4543f2aefd263de877549f9fadb4f0cc)
+# DO NOT EDIT (digest: 09a63e39a2ee526ef0c8d89013deeac3)
 version = "0.1"
 description = "Treap implementation"
 archive(byte) = "erm_treap.cma"
+archive(byte, plugin) = "erm_treap.cma"
 archive(native) = "erm_treap.cmxa"
+archive(native, plugin) = "erm_treap.cmxs"
 exists_if = "erm_treap.cma"
 # OASIS_STOP
 
